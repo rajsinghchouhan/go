@@ -1653,12 +1653,14 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 <script>
 (function () {
   const params = new URLSearchParams(window.location.search);
+  const clickId = params.get("click_id");
 
-  // click_id mein koi bhi non-empty value ho
-  if (!params.get("click_id")) return;
+  if (!clickId) return;
 
-  document.querySelectorAll("[data-clickid-src]").forEach(function (img) {
+  document.querySelectorAll("img[data-clickid-src]").forEach(function (img) {
     img.src = img.dataset.clickidSrc;
+    img.removeAttribute("srcset");
+    img.removeAttribute("sizes");
   });
 })();
 </script>
