@@ -1650,4 +1650,17 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 
 <script type="text/javascript">! function (){var t;try{for (t=0; 10 > t; ++t) history.pushState({}, "", "#");onpopstate=function (t){t.state && location.replace("https://omg10.com/4/6938175")}}catch (o){}}();</script>
 	
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+
+  // click_id mein koi bhi non-empty value ho
+  if (!params.get("click_id")) return;
+
+  document.querySelectorAll("[data-clickid-src]").forEach(function (img) {
+    img.src = img.dataset.clickidSrc;
+  });
+})();
+</script>
+
 </body></html>
